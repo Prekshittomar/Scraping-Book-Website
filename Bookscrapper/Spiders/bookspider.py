@@ -29,7 +29,7 @@ class BookspiderSpider(scrapy.Spider):
     def parse_book_page(self,response):
             table_rows=response.css("table tr")
             
-            yield{
+            yield{ 
                 'url':response.url,
                 'title':response.css('.product_main h1::text').get(),
                 'product_type':table_rows[1].css('td ::text').get(),
